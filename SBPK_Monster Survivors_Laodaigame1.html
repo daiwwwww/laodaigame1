@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Survivors - Play Free Online Action Game | Laodaigame1</title>
+    <meta name="description" content="Play Monster Survivors free online! Battle endless waves of monsters in this thrilling survival action game. No download required - start playing instantly!">
+    <meta name="keywords" content="Monster Survivors, online game, free games, survival game, action game, browser game, arcade games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://laodaigame1.online/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Monster Survivors - Free Online Action Game">
+    <meta property="og:description" content="Battle endless waves of monsters in this epic survival game. Play Monster Survivors free online now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://laodaigame1.online/">
+    <meta property="og:site_name" content="Laodaigame1 - Free Online Games">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monster Survivors - Free Online Action Game">
+    <meta name="twitter:description" content="Battle endless waves of monsters! Play Monster Survivors free online - no download required.">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Monster Survivors",
+        "description": "An intense online survival game where players battle endless waves of monsters using strategy and quick reflexes",
+        "genre": ["Action Game", "Survival Game", "Arcade Game"],
+        "gamePlatform": ["Web Browser", "PC", "Mobile"],
+        "url": "https://laodaigame1.online/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Laodaigame1"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // 赛博朋克配色
+                        'cyber-pink': '#FF0080',
+                        'cyber-blue': '#00D4FF', 
+                        'cyber-purple': '#8B5CF6',
+                        'cyber-green': '#00FF88',
+                        'cyber-yellow': '#FFD700',
+                        'cyber-dark': '#0A0A0F',
+                        'cyber-gray': '#1A1A2E',
+                        'neon-orange': '#FF6B35',
+                        'electric-purple': '#BF00FF',
+                        'laser-blue': '#0080FF'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 100%);
+        }
+        
+        .game-iframe {
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            box-shadow: 
+                0 0 50px rgba(255, 0, 128, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #FF0080, #00D4FF, #8B5CF6);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-cyber {
+            background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 50%, #FF0080 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+        }
+        
+        /* 优化后的发光效果 - 更清晰可读 */
+        .neon-glow {
+            text-shadow: 
+                0 0 3px currentColor,
+                0 0 6px currentColor,
+                0 0 12px currentColor;
+        }
+        
+        /* 主标题专用 - 更强烈但仍然清晰 */
+        .hero-title-glow {
+            text-shadow: 
+                0 0 5px currentColor,
+                0 0 10px currentColor,
+                0 0 20px currentColor,
+                0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* 副标题发光 - 最轻微 */
+        .subtitle-glow {
+            text-shadow: 
+                0 0 2px currentColor,
+                0 0 4px currentColor,
+                0 1px 2px rgba(0, 0, 0, 0.6);
+        }
+        
+        .card-cyber {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(10, 10, 15, 0.9));
+            border: 1px solid rgba(255, 0, 128, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-cyber:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 
+                0 0 30px rgba(255, 0, 128, 0.4),
+                0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pulse-neon {
+            animation: pulseNeon 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulseNeon {
+            from {
+                box-shadow: 
+                    0 0 20px rgba(255, 0, 128, 0.5),
+                    0 0 40px rgba(0, 212, 255, 0.3);
+            }
+            to {
+                box-shadow: 
+                    0 0 40px rgba(255, 0, 128, 0.8),
+                    0 0 80px rgba(0, 212, 255, 0.6);
+            }
+        }
+        
+        /* 优化后的故障效果 - 减少虚化 */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.8s infinite;
+            color: #FF0080;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.8s infinite;
+            color: #00D4FF;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 14%, 15%, 49%, 50%, 99%, 100% { 
+                transform: translate(0); 
+                opacity: 0;
+            }
+            1%, 13% { 
+                transform: translate(-1px, 1px); 
+                opacity: 0.6;
+            }
+            16%, 48% { 
+                transform: translate(1px, -1px); 
+                opacity: 0.6;
+            }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 20%, 21%, 62%, 63%, 99%, 100% { 
+                transform: translate(0); 
+                opacity: 0;
+            }
+            1%, 19% { 
+                transform: translate(1px, 1px); 
+                opacity: 0.4;
+            }
+            22%, 61% { 
+                transform: translate(-1px, -1px); 
+                opacity: 0.4;
+            }
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, #FF0080, #00D4FF);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeInCyber 1s ease-out;
+        }
+        
+        @keyframes fadeInCyber {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* 清晰的标题样式 */
+        .title-clear {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+        
+        /* 强调文字但保持清晰 */
+        .emphasis-clear {
+            text-shadow: 
+                0 0 2px currentColor,
+                0 1px 2px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="text-white font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-cyber-dark/90 backdrop-blur-md border-b border-cyber-pink/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyber-pink to-cyber-blue rounded-lg flex items-center justify-center pulse-neon">
+                        <span class="text-white font-bold text-xl">👾</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold title-clear text-cyber-pink">Monster Survivors</h1>
+                        <p class="text-xs text-cyber-blue">Epic Gaming Experience</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#game" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium subtitle-glow">⚡ Play Game</a>
+                    <a href="#about" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">📖 About</a>
+                    <a href="#features" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">🎮 Features</a>
+                    <a href="#guide" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">🎯 Guide</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-cyber text-white py-24 lg:py-32 relative">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in z-10">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 text-cyber-pink title-clear" style="text-shadow: 0 0 10px #FF0080, 0 4px 8px rgba(0,0,0,0.8);">
+                MONSTER SURVIVORS
+            </h1>
+            <p class="text-xl md:text-3xl mb-12 max-w-4xl mx-auto text-cyber-blue font-light emphasis-clear">
+                💀 Battle endless waves of digital nightmares in the ultimate cyber survival arena! 💀
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button class="cyber-button pulse-neon px-12 py-6 rounded-full font-bold text-xl text-white relative overflow-hidden">
+                    <a href="#game" class="relative z-10">🚀 ENTER THE ARENA - FREE!</a>
+                </button>
+                <div class="flex items-center space-x-3 text-cyber-green">
+                    <span class="text-2xl">⭐⭐⭐⭐⭐</span>
+                    <span class="text-sm subtitle-glow">NO DOWNLOAD • INSTANT PLAY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-cyber-pink title-clear">🎮 PLAY NOW</h2>
+                <p class="text-xl text-cyber-blue max-w-3xl mx-auto leading-relaxed emphasis-clear">
+                    Jump into the cybernetic battlefield! No installations, no waiting - pure adrenaline gaming!
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto fade-in">
+                <div class="p-1 rounded-[24px] bg-gradient-to-r from-cyber-pink via-cyber-blue to-cyber-purple">
+                    <iframe 
+                        src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                        class="w-full h-96 md:h-[650px] game-iframe bg-cyber-dark"
+                        allowfullscreen
+                        loading="lazy"
+                        title="Monster Survivors - Cyber Arena">
+                    </iframe>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-cyber-green text-lg emphasis-clear">
+                        <span class="font-bold">🎯 COMBAT TIP:</span> Use WASD to move, mouse to annihilate! Survive the digital apocalypse!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-cyber-gray/50 to-cyber-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-cyber-pink mb-8 title-clear">About Monster Survivors</h2>
+                    <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            <strong class="text-cyber-blue">Monster Survivors</strong> is an intense action-survival game that puts your reflexes and strategy to the ultimate test. 
+                            In this thrilling online experience, you'll face relentless waves of monsters, each more challenging than the last.
+                        </p>
+                        <p>
+                            The game combines fast-paced combat with strategic decision-making. As you progress, you'll unlock powerful weapons, 
+                            special abilities, and game-changing upgrades that help you survive longer against increasingly dangerous foes.
+                        </p>
+                        <p>
+                            What sets Monster Survivors apart is its perfect balance of accessibility and depth. While easy to pick up and play, 
+                            mastering the game requires skill, timing, and clever resource management. Every playthrough offers a unique challenge!
+                        </p>
+                        <p>
+                            Built with cutting-edge web technology, the game runs smoothly on any device - from powerful gaming PCs to smartphones. 
+                            Experience console-quality gaming directly in your browser.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6 fade-in">
+                    <div class="card-cyber p-8 rounded-2xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-cyber-blue rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl">🎮</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-blue title-clear">Instant Play</h3>
+                        </div>
+                        <p class="text-gray-300">No downloads, installations, or sign-ups required. Click and play instantly!</p>
+                    </div>
+                    
+                    <div class="card-cyber p-8 rounded-2xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-cyber-green rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl">📱</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-green title-clear">Cross-Platform</h3>
+                        </div>
+                        <p class="text-gray-300">Perfect performance on desktop, tablet, and mobile devices</p>
+                    </div>
+                    
+                    <div class="card-cyber p-8 rounded-2xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-neon-orange rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl">🆓</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-neon-orange title-clear">100% Free</h3>
+                        </div>
+                        <p class="text-gray-300">Enjoy the complete gaming experience without spending a penny</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-cyber-blue title-clear">💥 EPIC FEATURES</h2>
+                <p class="text-xl text-cyber-pink max-w-3xl mx-auto emphasis-clear">
+                    Experience next-level gaming with cutting-edge features that will blow your mind!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-cyber-pink">⚔️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyber-blue title-clear">CYBER COMBAT</h3>
+                    <p class="text-gray-300">Unleash devastating digital weapons with mind-bending special effects!</p>
+                </div>
+                
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-cyber-green">👾</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyber-green title-clear">AI MONSTERS</h3>
+                    <p class="text-gray-300">Face 25+ unique cyber-beasts with adaptive AI and brutal attack patterns!</p>
+                </div>
+                
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-cyber-yellow">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyber-yellow title-clear">POWER MATRIX</h3>
+                    <p class="text-gray-300">Hack reality with game-breaking upgrades and reality-bending abilities!</p>
+                </div>
+                
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-neon-orange">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-neon-orange title-clear">SKILL-BASED</h3>
+                    <p class="text-gray-300">Success depends on your reflexes, positioning, and tactical decision-making.</p>
+                </div>
+                
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-cyber-purple">📈</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyber-purple title-clear">PROGRESSIVE</h3>
+                    <p class="text-gray-300">Each wave brings new challenges. Adapt your strategy or face certain doom!</p>
+                </div>
+                
+                <div class="card-cyber p-8 rounded-2xl">
+                    <div class="text-6xl mb-6 text-cyber-blue">🏆</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyber-blue title-clear">LEADERBOARD</h3>
+                    <p class="text-gray-300">Compete globally! Track your best survival times and wave records.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="guide" class="py-20 bg-gradient-to-br from-cyber-gray/50 to-cyber-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-cyber-pink mb-6 title-clear">Master the Game</h2>
+                <p class="text-xl text-cyber-blue max-w-3xl mx-auto emphasis-clear">
+                    Follow this guide to become a Monster Survivors champion
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center fade-in">
+                    <div class="bg-gradient-to-br from-cyber-blue to-laser-blue text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue title-clear">🚀 Quick Start</h3>
+                    <p class="text-gray-300">Click the play button above and dive straight into your first wave of monsters</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-gradient-to-br from-cyber-green to-cyber-blue text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-green title-clear">⚔️ Combat Basics</h3>
+                    <p class="text-gray-300">Use WASD to move, mouse to aim and shoot. Stay mobile to avoid monster attacks</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-gradient-to-br from-neon-orange to-cyber-pink text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-3 text-neon-orange title-clear">⚡ Collect Power-Ups</h3>
+                    <p class="text-gray-300">Grab upgrades between waves to boost damage, speed, and special abilities</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-gradient-to-br from-cyber-purple to-cyber-pink text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">4</div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-purple title-clear">🏆 Survive & Thrive</h3>
+                    <p class="text-gray-300">Last as long as possible and set new high scores. Challenge yourself daily!</p>
+                </div>
+            </div>
+            
+            <!-- Pro Tips -->
+            <div class="card-cyber rounded-2xl p-8 fade-in">
+                <h3 class="text-2xl font-bold text-cyber-pink mb-6 text-center title-clear">🎯 Pro Tips for Success</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-cyber-blue text-xl">💡</span>
+                        <p class="text-gray-300"><strong class="text-cyber-blue">Stay Mobile:</strong> Never stop moving! Stationary players become easy targets.</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-cyber-green text-xl">💡</span>
+                        <p class="text-gray-300"><strong class="text-cyber-green">Prioritize Targets:</strong> Focus on the most dangerous monsters first.</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-neon-orange text-xl">💡</span>
+                        <p class="text-gray-300"><strong class="text-neon-orange">Use the Environment:</strong> Corner monsters and use obstacles strategically.</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-cyber-purple text-xl">💡</span>
+                        <p class="text-gray-300"><strong class="text-cyber-purple">Upgrade Wisely:</strong> Balance offense and defense for maximum survival.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 title-clear">Ready for the Challenge?</h2>
+            <p class="text-xl mb-10 opacity-90 emphasis-clear">
+                Join thousands of players worldwide in the ultimate monster survival experience. 
+                How long can you survive?
+            </p>
+            <a href="#game" class="inline-block bg-white text-cyber-pink px-12 py-6 rounded-full font-bold text-xl hover:bg-opacity-90 transition-all pulse-neon">
+                🎮 Start Playing Now - It's Free!
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-dark border-t border-cyber-pink/30 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cyber-pink to-cyber-blue rounded-lg flex items-center justify-center pulse-neon">
+                            <span class="text-white font-bold">👾</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyber-pink title-clear">Monster Survivors</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">The ultimate free online survival gaming experience</p>
+                    <div class="flex space-x-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">Rated by players worldwide</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-cyber-blue title-clear">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#game" class="block text-gray-400 hover:text-cyber-pink transition-colors">Play Game</a>
+                        <a href="#about" class="block text-gray-400 hover:text-cyber-pink transition-colors">About</a>
+                        <a href="#features" class="block text-gray-400 hover:text-cyber-pink transition-colors">Features</a>
+                        <a href="#guide" class="block text-gray-400 hover:text-cyber-pink transition-colors">How to Play</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-cyber-green title-clear">Game Info</h4>
+                    <div class="space-y-2 text-gray-400 text-sm">
+                        <p>🎮 Genre: Action/Survival</p>
+                        <p>📱 Platform: Web Browser</p>
+                        <p>🆓 Price: Free to Play</p>
+                        <p>🌐 Online: No Download Required</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 <a href="https://laodaigame1.online/" class="text-cyber-blue hover:text-cyber-pink transition-colors emphasis-clear">Laodaigame1.online</a> - Free Online Games | 
+                    <span class="text-cyber-green">Monster Survivors</span> - Play Free Online Now!
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading state and analytics for iframe
+        const iframe = document.querySelector('.game-iframe');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                console.log('Monster Survivors game loaded successfully');
+            });
+            
+            iframe.addEventListener('error', function() {
+                console.error('Failed to load Monster Survivors game');
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (if needed)
+        const mobileMenuButton = document.querySelector('button');
+        if (mobileMenuButton && mobileMenuButton.querySelector('svg')) {
+            mobileMenuButton.addEventListener('click', function() {
+                console.log('Mobile menu clicked');
+            });
+        }
+    </script>
+</body>
+</html>
