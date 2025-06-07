@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QD28DM33CK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QD28DM33CK');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Survivors - Play Free Online Action Game | Laodaigame1</title>
@@ -272,6 +281,65 @@
                 0 1px 2px rgba(0, 0, 0, 0.7);
         }
     </style>
+    
+    <!-- Google Analytics 事件追踪脚本 -->
+    <script>
+        // Google Analytics 事件追踪函数
+        function trackGameStart() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'game_start', {
+                    'event_category': 'engagement',
+                    'event_label': 'monster_survivors',
+                    'value': 1
+                });
+                console.log('GA: Game start tracked');
+            }
+        }
+
+        function trackGameView() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_game', {
+                    'event_category': 'engagement',
+                    'event_label': 'game_section_viewed',
+                    'value': 1
+                });
+                console.log('GA: Game view tracked');
+            }
+        }
+
+        function trackButtonClick(buttonName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    'event_category': 'button',
+                    'event_label': buttonName,
+                    'value': 1
+                });
+                console.log('GA: Button click tracked - ' + buttonName);
+            }
+        }
+
+        function trackSectionView(sectionName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_section', {
+                    'event_category': 'page_interaction',
+                    'event_label': sectionName,
+                    'value': 1
+                });
+                console.log('GA: Section view tracked - ' + sectionName);
+            }
+        }
+
+        function trackGameInteraction(action) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'game_interaction', {
+                    'event_category': 'game',
+                    'event_label': action,
+                    'value': 1
+                });
+                console.log('GA: Game interaction tracked - ' + action);
+            }
+        }
+    </script>
 </head>
 <body class="text-white font-sans antialiased">
     <!-- Header -->
@@ -288,10 +356,10 @@
                     </div>
                 </div>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#game" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium subtitle-glow">⚡ Play Game</a>
-                    <a href="#about" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">📖 About</a>
-                    <a href="#features" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">🎮 Features</a>
-                    <a href="#guide" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium">🎯 Guide</a>
+                    <a href="#game" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium subtitle-glow" onclick="trackButtonClick('nav_play_game')">⚡ Play Game</a>
+                    <a href="#about" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium" onclick="trackButtonClick('nav_about')">📖 About</a>
+                    <a href="#features" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium" onclick="trackButtonClick('nav_features')">🎮 Features</a>
+                    <a href="#guide" class="text-cyber-blue hover:text-cyber-pink transition-colors font-medium" onclick="trackButtonClick('nav_guide')">🎯 Guide</a>
                 </nav>
             </div>
         </div>
@@ -307,7 +375,7 @@
                 💀 Battle endless waves of digital nightmares in the ultimate cyber survival arena! 💀
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button class="cyber-button pulse-neon px-12 py-6 rounded-full font-bold text-xl text-white relative overflow-hidden">
+                <button class="cyber-button pulse-neon px-12 py-6 rounded-full font-bold text-xl text-white relative overflow-hidden" onclick="trackButtonClick('hero_play_button')">
                     <a href="#game" class="relative z-10">🚀 ENTER THE ARENA - FREE!</a>
                 </button>
                 <div class="flex items-center space-x-3 text-cyber-green">
@@ -335,7 +403,8 @@
                         class="w-full h-96 md:h-[650px] game-iframe bg-cyber-dark"
                         allowfullscreen
                         loading="lazy"
-                        title="Monster Survivors - Cyber Arena">
+                        title="Monster Survivors - Cyber Arena"
+                        onload="trackGameView(); trackGameInteraction('iframe_loaded');">
                     </iframe>
                 </div>
                 <div class="text-center mt-8">
@@ -526,7 +595,7 @@
                 Join thousands of players worldwide in the ultimate monster survival experience. 
                 How long can you survive?
             </p>
-            <a href="#game" class="inline-block bg-white text-cyber-pink px-12 py-6 rounded-full font-bold text-xl hover:bg-opacity-90 transition-all pulse-neon">
+            <a href="#game" class="inline-block bg-white text-cyber-pink px-12 py-6 rounded-full font-bold text-xl hover:bg-opacity-90 transition-all pulse-neon" onclick="trackButtonClick('cta_start_playing')">
                 🎮 Start Playing Now - It's Free!
             </a>
         </div>
@@ -553,10 +622,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-cyber-blue title-clear">Quick Links</h4>
                     <div class="space-y-2">
-                        <a href="#game" class="block text-gray-400 hover:text-cyber-pink transition-colors">Play Game</a>
-                        <a href="#about" class="block text-gray-400 hover:text-cyber-pink transition-colors">About</a>
-                        <a href="#features" class="block text-gray-400 hover:text-cyber-pink transition-colors">Features</a>
-                        <a href="#guide" class="block text-gray-400 hover:text-cyber-pink transition-colors">How to Play</a>
+                        <a href="#game" class="block text-gray-400 hover:text-cyber-pink transition-colors" onclick="trackButtonClick('footer_play_game')">Play Game</a>
+                        <a href="#about" class="block text-gray-400 hover:text-cyber-pink transition-colors" onclick="trackButtonClick('footer_about')">About</a>
+                        <a href="#features" class="block text-gray-400 hover:text-cyber-pink transition-colors" onclick="trackButtonClick('footer_features')">Features</a>
+                        <a href="#guide" class="block text-gray-400 hover:text-cyber-pink transition-colors" onclick="trackButtonClick('footer_guide')">How to Play</a>
                     </div>
                 </div>
                 
@@ -573,7 +642,7 @@
             
             <div class="border-t border-gray-700 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    © 2024 <a href="https://laodaigame1.online/" class="text-cyber-blue hover:text-cyber-pink transition-colors emphasis-clear">Laodaigame1.online</a> - Free Online Games | 
+                    © 2024 <a href="https://laodaigame1.online/" class="text-cyber-blue hover:text-cyber-pink transition-colors emphasis-clear" onclick="trackButtonClick('footer_homepage_link')">Laodaigame1.online</a> - Free Online Games | 
                     <span class="text-cyber-green">Monster Survivors</span> - Play Free Online Now!
                 </p>
             </div>
@@ -591,6 +660,10 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // 追踪页面内导航
+                    const sectionId = this.getAttribute('href').substring(1);
+                    trackSectionView(sectionId);
                 }
             });
         });
@@ -600,14 +673,21 @@
         if (iframe) {
             iframe.addEventListener('load', function() {
                 console.log('Monster Survivors game loaded successfully');
+                trackGameStart();
             });
             
             iframe.addEventListener('error', function() {
                 console.error('Failed to load Monster Survivors game');
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'exception', {
+                        'description': 'Game iframe failed to load',
+                        'fatal': false
+                    });
+                }
             });
         }
 
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for fade-in animations and section tracking
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -617,13 +697,77 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
+                    
+                    // 追踪用户滚动到不同部分
+                    if (entry.target.id) {
+                        trackSectionView(entry.target.id);
+                    }
                 }
             });
         }, observerOptions);
 
-        // Observe all elements with fade-in class
-        document.querySelectorAll('.fade-in').forEach(el => {
+        // Observe all elements with fade-in class and sections with IDs
+        document.querySelectorAll('.fade-in, section[id]').forEach(el => {
             observer.observe(el);
+        });
+
+        // 追踪页面停留时间
+        let pageStartTime = Date.now();
+        let gameStartTime = null;
+
+        // 当页面卸载时发送时间数据
+        window.addEventListener('beforeunload', function() {
+            const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'timing_complete', {
+                    'name': 'page_view_time',
+                    'value': timeOnPage
+                });
+                
+                if (gameStartTime) {
+                    const gameTime = Math.round((Date.now() - gameStartTime) / 1000);
+                    gtag('event', 'timing_complete', {
+                        'name': 'game_play_time',
+                        'value': gameTime
+                    });
+                }
+            }
+        });
+
+        // 追踪游戏开始时间
+        function trackGameStartTime() {
+            gameStartTime = Date.now();
+            trackGameInteraction('game_session_start');
+        }
+
+        // 每30秒追踪一次活跃用户（心跳）
+        setInterval(function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'user_active', {
+                    'event_category': 'engagement',
+                    'value': 1
+                });
+            }
+        }, 30000);
+
+        // 追踪滚动深度
+        let maxScrollDepth = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+            if (scrollPercent > maxScrollDepth) {
+                maxScrollDepth = scrollPercent;
+                
+                // 每25%追踪一次
+                if (maxScrollDepth >= 25 && maxScrollDepth < 50) {
+                    trackSectionView('scroll_25_percent');
+                } else if (maxScrollDepth >= 50 && maxScrollDepth < 75) {
+                    trackSectionView('scroll_50_percent');
+                } else if (maxScrollDepth >= 75 && maxScrollDepth < 100) {
+                    trackSectionView('scroll_75_percent');
+                } else if (maxScrollDepth >= 100) {
+                    trackSectionView('scroll_100_percent');
+                }
+            }
         });
 
         // Mobile menu toggle (if needed)
@@ -631,8 +775,21 @@
         if (mobileMenuButton && mobileMenuButton.querySelector('svg')) {
             mobileMenuButton.addEventListener('click', function() {
                 console.log('Mobile menu clicked');
+                trackButtonClick('mobile_menu');
             });
         }
+
+        // 页面加载完成后发送事件
+        window.addEventListener('load', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'page_title': document.title,
+                    'page_location': window.location.href
+                });
+            }
+        });
+
+        console.log('Monster Survivors - Analytics loaded and ready!');
     </script>
 </body>
 </html>
